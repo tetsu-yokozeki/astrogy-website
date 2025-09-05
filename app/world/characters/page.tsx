@@ -134,13 +134,9 @@ export default function CharactersPage() {
               {characters.map((character, index) => (
                 <Card
                   key={character.id}
-                  className={`
-hand - drawn - shadow
-$
-{
-  index % 2 === 0 ? "wavy-border" : "wavy-border-alt"
-}
-`}
+                  className={`hand-drawn-shadow ${
+                    index % 2 === 0 ? "wavy-border" : "wavy-border-alt"
+                  }`}
                 >
                   <div className="grid md:grid-cols-3 gap-6 p-6">
                     {/* Character Avatar */}
@@ -190,7 +186,7 @@ $
                         <h4 className="font-semibold text-primary mb-2">特殊能力</h4>
                         <div className="flex flex-wrap gap-1">
                           {character.abilities.map((ability, abilityIndex) => (
-                            <Badge key={abilityIndex} variant=\"secondary" className=\"text-xs">
+                            <Badge key={abilityIndex} variant="secondary" className="text-xs">
                               {ability}
                             </Badge>
                           ))}
