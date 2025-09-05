@@ -43,49 +43,55 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-4 lg:gap-6">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-1 text-sm lg:text-base text-foreground hover:text-primary transition-colors mobile-touch-target">
+                <Button variant="ghost" className="flex items-center gap-1 text-sm lg:text-base text-foreground hover:text-primary transition-colors mobile-touch-target px-3 py-2">
                   今日の運勢 <ChevronDown className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48">
-                {zodiacSigns.map((sign) => (
-                  <DropdownMenuItem key={sign.slug} asChild>
-                    <Link href={`/daily/${sign.slug}`} className="flex items-center gap-2 mobile-touch-target">
-                      <Image
-                        src={sign.svgPath}
-                        alt={sign.name}
-                        width={20}
-                        height={20}
-                        className="flex-shrink-0"
-                      />
-                      <span>{sign.name}</span>
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
+              <DropdownMenuContent className="w-56">
+                <div className="p-2">
+                  <div className="text-xs font-medium text-muted-foreground mb-2 px-2">星座を選択してください</div>
+                  {zodiacSigns.map((sign) => (
+                    <DropdownMenuItem key={sign.slug} asChild>
+                      <Link href={`/daily/${sign.slug}`} className="flex items-center gap-3 mobile-touch-target px-2 py-2">
+                        <Image
+                          src={sign.svgPath}
+                          alt={sign.name}
+                          width={24}
+                          height={24}
+                          className="flex-shrink-0"
+                        />
+                        <span className="text-sm">{sign.name}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-1 text-sm lg:text-base text-foreground hover:text-primary transition-colors mobile-touch-target">
+                <Button variant="ghost" className="flex items-center gap-1 text-sm lg:text-base text-foreground hover:text-primary transition-colors mobile-touch-target px-3 py-2">
                   今月の運勢 <ChevronDown className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48">
-                {zodiacSigns.map((sign) => (
-                  <DropdownMenuItem key={sign.slug} asChild>
-                    <Link href={`/monthly/${sign.slug}`} className="flex items-center gap-2 mobile-touch-target">
-                      <Image
-                        src={sign.svgPath}
-                        alt={sign.name}
-                        width={20}
-                        height={20}
-                        className="flex-shrink-0"
-                      />
-                      <span>{sign.name}</span>
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
+              <DropdownMenuContent className="w-56">
+                <div className="p-2">
+                  <div className="text-xs font-medium text-muted-foreground mb-2 px-2">星座を選択してください</div>
+                  {zodiacSigns.map((sign) => (
+                    <DropdownMenuItem key={sign.slug} asChild>
+                      <Link href={`/monthly/${sign.slug}`} className="flex items-center gap-3 mobile-touch-target px-2 py-2">
+                        <Image
+                          src={sign.svgPath}
+                          alt={sign.name}
+                          width={24}
+                          height={24}
+                          className="flex-shrink-0"
+                        />
+                        <span className="text-sm">{sign.name}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
@@ -97,45 +103,42 @@ export default function Header() {
                 <Menu className="w-6 h-6" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48">
-              <DropdownMenuItem asChild>
-                <Link href="/daily" className="mobile-touch-target">
-                  今日の運勢一覧
-                </Link>
-              </DropdownMenuItem>
-              {zodiacSigns.map((sign) => (
-                <DropdownMenuItem key={`daily-${sign.slug}`} asChild>
-                  <Link href={`/daily/${sign.slug}`} className="flex items-center gap-2 mobile-touch-target pl-6">
-                    <Image
-                      src={sign.svgPath}
-                      alt={sign.name}
-                      width={16}
-                      height={16}
-                      className="flex-shrink-0"
-                    />
-                    <span>{sign.name}（今日）</span>
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-              <DropdownMenuItem asChild>
-                <Link href="/monthly" className="mobile-touch-target">
-                  今月の運勢一覧
-                </Link>
-              </DropdownMenuItem>
-              {zodiacSigns.map((sign) => (
-                <DropdownMenuItem key={`monthly-${sign.slug}`} asChild>
-                  <Link href={`/monthly/${sign.slug}`} className="flex items-center gap-2 mobile-touch-target pl-6">
-                    <Image
-                      src={sign.svgPath}
-                      alt={sign.name}
-                      width={16}
-                      height={16}
-                      className="flex-shrink-0"
-                    />
-                    <span>{sign.name}（今月）</span>
-                  </Link>
-                </DropdownMenuItem>
-              ))}
+            <DropdownMenuContent align="end" className="w-64">
+              <div className="p-2">
+                <div className="text-xs font-medium text-muted-foreground mb-3 px-2">今日の運勢</div>
+                {zodiacSigns.map((sign) => (
+                  <DropdownMenuItem key={`daily-${sign.slug}`} asChild>
+                    <Link href={`/daily/${sign.slug}`} className="flex items-center gap-3 mobile-touch-target px-2 py-2">
+                      <Image
+                        src={sign.svgPath}
+                        alt={sign.name}
+                        width={20}
+                        height={20}
+                        className="flex-shrink-0"
+                      />
+                      <span className="text-sm">{sign.name}</span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+                
+                <div className="border-t border-border my-2"></div>
+                
+                <div className="text-xs font-medium text-muted-foreground mb-3 px-2">今月の運勢</div>
+                {zodiacSigns.map((sign) => (
+                  <DropdownMenuItem key={`monthly-${sign.slug}`} asChild>
+                    <Link href={`/monthly/${sign.slug}`} className="flex items-center gap-3 mobile-touch-target px-2 py-2">
+                      <Image
+                        src={sign.svgPath}
+                        alt={sign.name}
+                        width={20}
+                        height={20}
+                        className="flex-shrink-0"
+                      />
+                      <span className="text-sm">{sign.name}</span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
