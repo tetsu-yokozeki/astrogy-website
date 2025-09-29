@@ -38,11 +38,6 @@ export default function Footer() {
                   今月の運勢
                 </Link>
               </li>
-              <li>
-                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
-                  サイトについて
-                </Link>
-              </li>
             </ul>
           </div>
 

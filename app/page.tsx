@@ -30,8 +30,8 @@ const characters = [
   {
     name: "ペルナ",
     plant: "ラフレシア",
-    description: "めっちゃくさいけど、実はすごく綺麗好き。\n専門は四柱推命で、恋愛相談になると変身する。",
-    specialty: "四柱推命・恋愛相談",
+    description: "めっちゃくさいけど、実はすごく綺麗好き。\n専門は西洋占星術で、恋愛相談になると変身する。",
+    specialty: "西洋占星術・恋愛相談",
     color: "赤",
     image: "/perna-character-illustration.png",
   },
@@ -191,6 +191,108 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTENTS Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-primary mb-4">CONTENTS</h3>
+            <p className="text-muted-foreground">占い植物園の特別なコンテンツをお楽しみください</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* ペルナの日記 */}
+            <Link href="/daily/perna-diary">
+              <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer hand-drawn-shadow wavy-border hover:scale-105">
+                <div className="aspect-video relative mb-4 overflow-hidden rounded-t-lg">
+                  <Image
+                    src="/perna-character-illustration.png"
+                    alt="ペルナの日記"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardHeader className="pt-0">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge variant="secondary" className="text-xs">
+                      日記
+                    </Badge>
+                    <span className="text-xs text-muted-foreground">毎日更新</span>
+                  </div>
+                  <CardTitle className="text-lg text-primary">ペルナの日記</CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-sm text-muted-foreground">
+                    ペルナちゃんの日常と占い植物園での出来事を綴った特別な日記です。
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* 植物園の1日 */}
+            <Link href="/world/daily-life">
+              <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer hand-drawn-shadow wavy-border-alt hover:scale-105">
+                <div className="aspect-video relative mb-4 overflow-hidden rounded-t-lg">
+                  <Image
+                    src="/fortune-telling-crystals-and-stars.png"
+                    alt="植物園の1日"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardHeader className="pt-0">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge variant="secondary" className="text-xs">
+                      世界観
+                    </Badge>
+                    <span className="text-xs text-muted-foreground">特別コンテンツ</span>
+                  </div>
+                  <CardTitle className="text-lg text-primary">植物園の1日</CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-sm text-muted-foreground">
+                    占い植物園での1日の流れと、キャラクターたちの日常を覗いてみましょう。
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* 占いの歴史 */}
+            <Link href="/about/history">
+              <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer hand-drawn-shadow wavy-border hover:scale-105">
+                <div className="aspect-video relative mb-4 overflow-hidden rounded-t-lg">
+                  <Image
+                    src="/full-moon-night-sky-magical.png"
+                    alt="占いの歴史"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardHeader className="pt-0">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge variant="secondary" className="text-xs">
+                      歴史
+                    </Badge>
+                    <span className="text-xs text-muted-foreground">知識</span>
+                  </div>
+                  <CardTitle className="text-lg text-primary">占いの歴史</CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-sm text-muted-foreground">
+                    西洋占星術の歴史と占い植物園が生まれた物語を紹介します。
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+
+          <div className="text-center mt-8">
+            <Button variant="outline" className="rounded-full px-8 bg-transparent" asChild>
+              <Link href="/world">もっと詳しく見る</Link>
+            </Button>
           </div>
         </div>
       </section>

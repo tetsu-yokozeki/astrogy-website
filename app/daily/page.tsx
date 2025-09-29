@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import Image from "next/image"
 import { Flower2 } from "lucide-react"
+import Footer from "@/components/footer"
 
 const zodiacSigns = [
   { name: "牡羊座", slug: "aries", period: "3/21-4/19", emoji: "♈", svgPath: "/zodiac-1.svg" },
@@ -143,6 +144,9 @@ export default function DailyPage() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }
